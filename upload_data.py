@@ -28,8 +28,7 @@ def compute_hash(row):
 
 # Insert Data into Database
 try:
-    # Add a new 'hash' column for data integrity
-    df['hash'] = df.apply(compute_hash, axis=1)
+
 
     # Insert data into the database
     df.to_sql('healthrecord', con=engine, if_exists='append', index=False)
